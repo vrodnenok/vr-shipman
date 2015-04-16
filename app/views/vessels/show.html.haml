@@ -1,0 +1,90 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @vessel.name
+%p
+  %b Type:
+  = @vessel.type
+%p
+  %b Nav area:
+  = @vessel.nav_area
+%p
+  %b Yob:
+  = @vessel.yob
+%p
+  %b Dwt:
+  = @vessel.dwt
+%p
+  %b Dwcc:
+  = @vessel.dwcc
+%p
+  %b Grt:
+  = @vessel.grt
+%p
+  %b Nrt:
+  = @vessel.nrt
+%p
+  %b Volume:
+  = @vessel.volume
+%p
+  %b Speed loaded:
+  = @vessel.speed_loaded
+%p
+  %b Speed ballast:
+  = @vessel.speed_ballast
+%p
+  %b Fuel1 uw:
+  = @vessel.fuel1_uw
+%p
+  %b Fuel2 uw:
+  = @vessel.fuel2_uw
+%p
+  %b Fuel1 ip:
+  = @vessel.fuel1_ip
+%p
+  %b Fuel2 ip:
+  = @vessel.fuel2_ip
+%p
+  %b Lo1 uw:
+  = @vessel.lo1_uw
+%p
+  %b Lo2 uw:
+  = @vessel.lo2_uw
+%p
+  %b Lo1 ip:
+  = @vessel.lo1_ip
+%p
+  %b Lo2 ip:
+  = @vessel.lo2_ip
+%p
+  %b Draft:
+  = @vessel.draft
+%p
+  %b Salary:
+  = @vessel.salary
+%p
+  %b Fw cons:
+  = @vessel.fw_cons
+%p
+  %b Hire:
+  = @vessel.hire
+%p
+  %b Office exp:
+  = @vessel.office_exp
+%p
+  %b Pandi:
+  = @vessel.pandi
+%p
+  %b Pic url:
+  = @vessel.pic_url
+%p
+  %b Other url:
+  = @vessel.other_url
+%p
+  %b Comment:
+  = @vessel.comment
+
+= link_to 'Edit', edit_vessel_path(@vessel)
+\|
+= link_to 'Back', vessels_path

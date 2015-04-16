@@ -1,0 +1,23 @@
+generate scaffold Vessel name:string type:string nav_area:string yob:integer dwt:integer dwcc:integer grt:integer nrt:integer volume:decimal speed_loaded:decimal speed_ballast:decimal fuel1_uw:decimal fuel2_uw:decimal fuel1_ip:decimal fuel2_ip:decimal lo1_uw:decimal lo2_uw:decimal lo1_ip:decimal lo2_ip:decimal draft:decimal salary:decimal fw_cons:decimal hire:decimal office_exp:decimal pandi:decimal pic_url:string other_url:text comment:text 
+
+   volume = models.IntegerField(null=True, blank=True)
+    speed_ballast = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    speed_loaded = models.DecimalField(null=True, max_digits=12, decimal_placesecimal=4, blank=True)
+    lo_underway = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    fuel_underway = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    lo_in_port = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    fuel_in_port = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    fw_cons = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    salary = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    pandi = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    loa = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    beam = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    dm = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    draft = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    nav_class = models.IntegerField(null=True, blank=True)
+    office_share = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    provisions = models.DecimalField(null=True, max_digits=12, decimal_places=4, blank=True)
+    built = models.IntegerField(null=True, blank=True)
+
+
+T

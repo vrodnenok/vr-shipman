@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title Hello!
+    = stylesheet_link_tag "application", media: "all", 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle.collapsed{'data-toggle'=>"collapse", 'data-target'=>"#bs=example-navbar-collapse1"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href=>"/"}VR Shipman
+        %ul.nav.navbar-nav
+          %li=link_to "All vessels", vessels_path
+        %ul.nav.navbar-nav.navbar-right
+          -if !current_user
+            %li=link_to "Sign up", new_user_registration_path
+            %li=link_to "Sign in", new_user_session_path
+          -else
+            %li=link_to "Signed as #{current_user.first_name} #{current_user.last_name}", edit_user_registration_path
+            %li=link_to "Sign out", destroy_user_session_path, :method=>:delete
+    .container
+      .container-fluid
+        %p.notice=notice
+        %p.alert=alert
+        = yield
+        = javascript_include_tag 'application', 'data-turbolinks-track' => true

@@ -1,0 +1,23 @@
+.panel.panel-info.col-md-6.col-md-offset-3
+  .panel-heading Sign up:
+  .panel-body
+    .container-fluid
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), :html=>{class:'form-default', "role"=>"form"}) do |f|
+        = devise_error_messages!
+        .form-group
+          = f.text_field :first_name, autocomplete: "yes", :class=>'form-control', :placeholder=>"Your name"
+        .form-group
+          = f.text_field :last_name, autocomplete: "yes", :class=>'form-control', :placeholder=>"Your last name"
+        .form-group
+          = f.text_field :position, autocomplete: "yes", :class=>'form-control', :placeholder=>"Your position"
+        .form-group
+          = f.text_field :profile, autocomplete: "yes", :class=>'form-control', :placeholder=>"Your profile"
+        .form-group
+          = f.email_field :email, :class=>'form-control', :placeholder=>"Your email address"
+        .form-group
+          = f.password_field :password, autocomplete: "off", :class=>'form-control', :placeholder=>"Choose password"
+        .form-group
+          = f.password_field :password_confirmation, autocomplete: "off", :class=>'form-control', :placeholder=>"Confirm password"
+        .form-group
+          .actions
+            = f.submit "Sign up", :class=>'btn btn-default'

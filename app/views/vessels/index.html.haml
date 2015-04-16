@@ -1,0 +1,75 @@
+%h1 Listing vessels
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Type
+      %th Nav area
+      %th Yob
+      %th Dwt
+      %th Dwcc
+      %th Grt
+      %th Nrt
+      %th Volume
+      %th Speed loaded
+      %th Speed ballast
+      %th Fuel1 uw
+      %th Fuel2 uw
+      %th Fuel1 ip
+      %th Fuel2 ip
+      %th Lo1 uw
+      %th Lo2 uw
+      %th Lo1 ip
+      %th Lo2 ip
+      %th Draft
+      %th Salary
+      %th Fw cons
+      %th Hire
+      %th Office exp
+      %th Pandi
+      %th Pic url
+      %th Other url
+      %th Comment
+      %th
+      %th
+      %th
+
+  %tbody
+    - @vessels.each do |vessel|
+      %tr
+        %td= vessel.name
+        %td= vessel.type
+        %td= vessel.nav_area
+        %td= vessel.yob
+        %td= vessel.dwt
+        %td= vessel.dwcc
+        %td= vessel.grt
+        %td= vessel.nrt
+        %td= vessel.volume
+        %td= vessel.speed_loaded
+        %td= vessel.speed_ballast
+        %td= vessel.fuel1_uw
+        %td= vessel.fuel2_uw
+        %td= vessel.fuel1_ip
+        %td= vessel.fuel2_ip
+        %td= vessel.lo1_uw
+        %td= vessel.lo2_uw
+        %td= vessel.lo1_ip
+        %td= vessel.lo2_ip
+        %td= vessel.draft
+        %td= vessel.salary
+        %td= vessel.fw_cons
+        %td= vessel.hire
+        %td= vessel.office_exp
+        %td= vessel.pandi
+        %td= vessel.pic_url
+        %td= vessel.other_url
+        %td= vessel.comment
+        %td= link_to 'Show', vessel
+        %td= link_to 'Edit', edit_vessel_path(vessel)
+        %td= link_to 'Destroy', vessel, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Vessel', new_vessel_path

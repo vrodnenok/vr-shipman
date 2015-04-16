@@ -1,0 +1,94 @@
+= form_for @vessel do |f|
+  - if @vessel.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@vessel.errors.count, "error")} prohibited this vessel from being saved:"
+      %ul
+        - @vessel.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :type
+    = f.text_field :type
+  .field
+    = f.label :nav_area
+    = f.text_field :nav_area
+  .field
+    = f.label :yob
+    = f.number_field :yob
+  .field
+    = f.label :dwt
+    = f.number_field :dwt
+  .field
+    = f.label :dwcc
+    = f.number_field :dwcc
+  .field
+    = f.label :grt
+    = f.number_field :grt
+  .field
+    = f.label :nrt
+    = f.number_field :nrt
+  .field
+    = f.label :volume
+    = f.text_field :volume
+  .field
+    = f.label :speed_loaded
+    = f.text_field :speed_loaded
+  .field
+    = f.label :speed_ballast
+    = f.text_field :speed_ballast
+  .field
+    = f.label :fuel1_uw
+    = f.text_field :fuel1_uw
+  .field
+    = f.label :fuel2_uw
+    = f.text_field :fuel2_uw
+  .field
+    = f.label :fuel1_ip
+    = f.text_field :fuel1_ip
+  .field
+    = f.label :fuel2_ip
+    = f.text_field :fuel2_ip
+  .field
+    = f.label :lo1_uw
+    = f.text_field :lo1_uw
+  .field
+    = f.label :lo2_uw
+    = f.text_field :lo2_uw
+  .field
+    = f.label :lo1_ip
+    = f.text_field :lo1_ip
+  .field
+    = f.label :lo2_ip
+    = f.text_field :lo2_ip
+  .field
+    = f.label :draft
+    = f.text_field :draft
+  .field
+    = f.label :salary
+    = f.text_field :salary
+  .field
+    = f.label :fw_cons
+    = f.text_field :fw_cons
+  .field
+    = f.label :hire
+    = f.text_field :hire
+  .field
+    = f.label :office_exp
+    = f.text_field :office_exp
+  .field
+    = f.label :pandi
+    = f.text_field :pandi
+  .field
+    = f.label :pic_url
+    = f.text_field :pic_url
+  .field
+    = f.label :other_url
+    = f.text_field :other_url
+  .field
+    = f.label :comment
+    = f.text_area :comment
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  nav_area: MyString
+  yob: 1
+  dwt: 1
+  dwcc: 1
+  grt: 1
+  nrt: 1
+  volume: 9.99
+  speed_loaded: 9.99
+  speed_ballast: 9.99
+  fuel1_uw: 9.99
+  fuel2_uw: 9.99
+  fuel1_ip: 9.99
+  fuel2_ip: 9.99
+  lo1_uw: 9.99
+  lo2_uw: 9.99
+  lo1_ip: 9.99
+  lo2_ip: 9.99
+  draft: 9.99
+  salary: 9.99
+  fw_cons: 9.99
+  hire: 9.99
+  office_exp: 9.99
+  pandi: 9.99
+  pic_url: MyString
+  other_url: MyString
+  comment: MyText
+
+two:
+  name: MyString
+  type: 
+  nav_area: MyString
+  yob: 1
+  dwt: 1
+  dwcc: 1
+  grt: 1
+  nrt: 1
+  volume: 9.99
+  speed_loaded: 9.99
+  speed_ballast: 9.99
+  fuel1_uw: 9.99
+  fuel2_uw: 9.99
+  fuel1_ip: 9.99
+  fuel2_ip: 9.99
+  lo1_uw: 9.99
+  lo2_uw: 9.99
+  lo1_ip: 9.99
+  lo2_ip: 9.99
+  draft: 9.99
+  salary: 9.99
+  fw_cons: 9.99
+  hire: 9.99
+  office_exp: 9.99
+  pandi: 9.99
+  pic_url: MyString
+  other_url: MyString
+  comment: MyText
