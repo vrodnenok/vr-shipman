@@ -1,28 +1,21 @@
+%br 
 .panel.panel-info.col-md-6.col-md-offset-3
   .panel-heading Edit current user's data:
   .panel-body
     .container-fluid
-      = form_for(resource, as: resource_name, url: registration_path(resource_name), :html=>{method: :put, class:'form-default', "role"=>"form"}) do |f|
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :html=>{method: :put, class:'form-horizontal', "role"=>"form"}) do |f|
         = devise_error_messages!
-        .form-group
-          = f.text_field :first_name, autocomplete: "yes", :class=>'form-control', :placeholder=>"Your name"
-        .form-group
-          = f.text_field :last_name, autocomplete: "yes", :class=>'form-control', :placeholder=>"Your last name"
-        .form-group
-          = f.text_field :position, autocomplete: "yes", :class=>'form-control', :placeholder=>"Your position"
-        .form-group
-          = f.text_field :profile, autocomplete: "yes", :class=>'form-control', :placeholder=>"Your profile"
-        .form-group
-          = f.email_field :email, :class=>'form-control', :placeholder=>"Your email address"
-        .form-group
-          = f.password_field :password, autocomplete: "off", :class=>'form-control', :placeholder=>"Choose password"
-        .form-group
-          = f.password_field :password_confirmation, autocomplete: "off", :class=>'form-control', :placeholder=>"Confirm password"
-        .form-group
-          = f.password_field :current_password, autocomplete: "off", :class=>'form-control', :placeholder=>"Current password"
-        .form-group
-          .actions
-            = f.submit "Sign up", :class=>'btn btn-default'
+        = f.input :first_name, autocomplete: "yes", class:'form-control', :placeholder=>"Your name"
+        = f.input :last_name, autocomplete: "yes", :class=>'form-control', :placeholder=>"Your last name"
+        = f.input :position, autocomplete: "yes", :class=>'form-control', :placeholder=>"Your position"
+        = f.input :profile, autocomplete: "yes", :class=>'form-control', :placeholder=>"Your profile"
+        = f.input :email, as: :email, :class=>'form-control', :placeholder=>"Your email address"
+        = f.input :password, autocomplete: "off", :class=>'form-control', :placeholder=>"Choose password"
+        = f.input :password_confirmation, autocomplete: "off", :class=>'form-control', :placeholder=>"Confirm password"
+        = f.input :current_password, autocomplete: "off", :class=>'form-control', :placeholder=>"Current password, *** REQUIRED ***"
+        .actions
+          = f.submit "Update", :class=>'btn btn-default'
+      #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?"}, method: :delete, class:'btn btn-default'}
 
 
 

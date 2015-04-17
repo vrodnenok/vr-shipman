@@ -2,7 +2,7 @@ class CreateVessels < ActiveRecord::Migration
   def change
     create_table :vessels do |t|
       t.string :name
-      t.string :type
+      t.string :vessels_type
       t.string :nav_area
       t.integer :yob
       t.integer :dwt
@@ -29,8 +29,10 @@ class CreateVessels < ActiveRecord::Migration
       t.string :pic_url
       t.string :other_url
       t.text :comment
+      t.integer :user_id
 
       t.timestamps null: false
     end
+    add_index :vessels, :user_id
   end
 end

@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150416155451) do
 
   create_table "vessels", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "vessels_type"
     t.string   "nav_area"
     t.integer  "yob"
     t.integer  "dwt"
@@ -67,8 +67,11 @@ ActiveRecord::Schema.define(version: 20150416155451) do
     t.string   "pic_url"
     t.string   "other_url"
     t.text     "comment"
+    t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  add_index "vessels", ["user_id"], name: "index_vessels_on_user_id", using: :btree
 
 end

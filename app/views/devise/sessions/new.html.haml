@@ -3,18 +3,10 @@
     .container
       %h4 Log in:
   .panel-body
-    = form_for(resource, as: resource_name, url: session_path(resource_name), :html=>{:class=>"form-horizontal"}) do |f|
-      .controls
-        = f.label :email
-        = f.email_field :email, autofocus: true, :class=>"form-control"
-      %br  
-      .controls
-        = f.label :password
-        = f.password_field :password, autocomplete: "off", :class=>"form-control"
-      %br  
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html:{class:"form-horizontal"}) do |f|
+      = f.input :email, autofocus: true, placeholder: 'enter your email:'
+      = f.input :password, autocomplete: "off", hint: '8 characters'
       - if devise_mapping.rememberable?
-        .controls
-          = f.check_box :remember_me
-          = f.label :remember_me
+        = f.input :remember_me, as: :boolean
       .actions
         = f.submit "Log in"

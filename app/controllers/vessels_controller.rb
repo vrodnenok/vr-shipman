@@ -25,7 +25,7 @@ class VesselsController < ApplicationController
   # POST /vessels.json
   def create
     @vessel = Vessel.new(vessel_params)
-
+    @vessel.user_id = current_user.id if current_user
     respond_to do |format|
       if @vessel.save
         format.html { redirect_to @vessel, notice: 'Vessel was successfully created.' }
@@ -69,6 +69,6 @@ class VesselsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vessel_params
-      params.require(:vessel).permit(:name, :type, :nav_area, :yob, :dwt, :dwcc, :grt, :nrt, :volume, :speed_loaded, :speed_ballast, :fuel1_uw, :fuel2_uw, :fuel1_ip, :fuel2_ip, :lo1_uw, :lo2_uw, :lo1_ip, :lo2_ip, :draft, :salary, :fw_cons, :hire, :office_exp, :pandi, :pic_url, :other_url, :comment)
+      params.require(:vessel).permit(:name, :vessels_type, :nav_area, :yob, :dwt, :dwcc, :grt, :nrt, :volume, :speed_loaded, :speed_ballast, :fuel1_uw, :fuel2_uw, :fuel1_ip, :fuel2_ip, :lo1_uw, :lo2_uw, :lo1_ip, :lo2_ip, :draft, :salary, :fw_cons, :hire, :office_exp, :pandi, :pic_url, :other_url, :comment, :user_id)
     end
 end

@@ -1,94 +1,38 @@
-= form_for @vessel do |f|
+= simple_form_for @vessel, html:{class:'form-horizontal'} do |f|
   - if @vessel.errors.any?
     #error_explanation
       %h2= "#{pluralize(@vessel.errors.count, "error")} prohibited this vessel from being saved:"
       %ul
         - @vessel.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :type
-    = f.text_field :type
-  .field
-    = f.label :nav_area
-    = f.text_field :nav_area
-  .field
-    = f.label :yob
-    = f.number_field :yob
-  .field
-    = f.label :dwt
-    = f.number_field :dwt
-  .field
-    = f.label :dwcc
-    = f.number_field :dwcc
-  .field
-    = f.label :grt
-    = f.number_field :grt
-  .field
-    = f.label :nrt
-    = f.number_field :nrt
-  .field
-    = f.label :volume
-    = f.text_field :volume
-  .field
-    = f.label :speed_loaded
-    = f.text_field :speed_loaded
-  .field
-    = f.label :speed_ballast
-    = f.text_field :speed_ballast
-  .field
-    = f.label :fuel1_uw
-    = f.text_field :fuel1_uw
-  .field
-    = f.label :fuel2_uw
-    = f.text_field :fuel2_uw
-  .field
-    = f.label :fuel1_ip
-    = f.text_field :fuel1_ip
-  .field
-    = f.label :fuel2_ip
-    = f.text_field :fuel2_ip
-  .field
-    = f.label :lo1_uw
-    = f.text_field :lo1_uw
-  .field
-    = f.label :lo2_uw
-    = f.text_field :lo2_uw
-  .field
-    = f.label :lo1_ip
-    = f.text_field :lo1_ip
-  .field
-    = f.label :lo2_ip
-    = f.text_field :lo2_ip
-  .field
-    = f.label :draft
-    = f.text_field :draft
-  .field
-    = f.label :salary
-    = f.text_field :salary
-  .field
-    = f.label :fw_cons
-    = f.text_field :fw_cons
-  .field
-    = f.label :hire
-    = f.text_field :hire
-  .field
-    = f.label :office_exp
-    = f.text_field :office_exp
-  .field
-    = f.label :pandi
-    = f.text_field :pandi
-  .field
-    = f.label :pic_url
-    = f.text_field :pic_url
-  .field
-    = f.label :other_url
-    = f.text_field :other_url
-  .field
-    = f.label :comment
-    = f.text_area :comment
+  = f.input :name, label: "Vessels name:"
+  = f.input :vessels_type, label: 'Type of the vessel'
+  = f.input :nav_area, label: 'Navigation area'
+  = f.input :yob, label: 'Year of build'
+  = f.input :dwt, label: 'Deadweight'
+  = f.input :dwcc, label: 'DWT Cargo capacity'
+  = f.input :grt, label: 'GRT'
+  = f.input :nrt, label: 'NRT'
+  = f.input :volume, label: 'Holds volume in cubic meters:'
+  = f.input :speed_loaded, label: "Loaded vessels speed: "
+  = f.input :speed_ballast, label: 'Vessels speed in ballast'
+  = f.input :fuel1_uw, label: 'Heavy fuel underway:'
+  = f.input :fuel2_uw, label: 'Gasoil underway'
+  = f.input :fuel1_ip, label: 'Heavy fuel consumption in port'
+  = f.input :fuel2_ip, label: 'Gasoil consumption in port'
+  = f.input :lo1_uw, label: 'Lubricant type 1 consumption underway'
+  = f.input :lo2_uw, label: 'Lubricant type 2 consumption underway'
+  = f.input :lo1_ip, label: 'Lubricant type 1 consumption idle'
+  = f.input :lo2_ip, label: 'Lubricant type 2 consumption idle'
+  = f.input :draft, label: 'Vessels draft'
+  = f.input :salary, label: 'Crew salary in USD per month'
+  = f.input :fw_cons, label: 'Fresh water consumption per day'
+  = f.input :hire, label: 'Hire rate'
+  = f.input :office_exp, label: 'Office keep-up expenses'
+  = f.input :pandi, label: 'PANDI calls in USD per year'
+  = f.input :pic_url, label: 'URL of vessels piture'
+  = f.input :other_url, label: 'URL for other vessels docs'
+  = f.input :comment, label: 'Comment:'
+  = f.input :user_id, value: '#{current_user.id}'
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class:'btn btn-default'

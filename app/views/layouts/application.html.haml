@@ -5,7 +5,7 @@
     = stylesheet_link_tag "application", media: "all", 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .navbar.navbar-inverse.navbar-fixed-top
+    .navbar.navbar-default.navbar-fixed-top
       .container-fluid
         .navbar-header
           %button.navbar-toggle.collapsed{'data-toggle'=>"collapse", 'data-target'=>"#bs=example-navbar-collapse1"}
@@ -16,6 +16,20 @@
           %a.navbar-brand{:href=>"/"}VR Shipman
         %ul.nav.navbar-nav
           %li=link_to "All vessels", vessels_path
+        %form.navbar-form.navbar-left 
+          .form-group
+            Select vessel:
+            %select.span2.navbar-btn
+              -if @vessels
+                -@vessels.each do |v|
+                  %option=v.name
+        %form.navbar-form.navbar-left 
+          .form-group
+            Select voyage:
+            %select.span2.navbar-btn
+              -if @voyages
+                -@voyages.each do |v|
+                  %option=v.name
         %ul.nav.navbar-nav.navbar-right
           -if !current_user
             %li=link_to "Sign up", new_user_registration_path
@@ -24,7 +38,9 @@
             %li=link_to "Signed as #{current_user.first_name} #{current_user.last_name}", edit_user_registration_path
             %li=link_to "Sign out", destroy_user_session_path, :method=>:delete
     .container
-      %p.notice=notice
-      %p.alert=alert
+      - if notice 
+        %p.notice=notice
+      - if alert 
+        %p.alert=alert
       = yield
       = javascript_include_tag 'application', 'data-turbolinks-track' => true
